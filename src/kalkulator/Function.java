@@ -10,6 +10,9 @@ package kalkulator;
  */
 public class Function extends OperationAbs{
     static public double Log(Double x){
+    	if(x <= 0) {
+    		throw new NegativeLogException("Ln z liczby ujemnej - ");
+    	}
         return Math.log(x);
     }
     static public double Sqrt(Double x){
