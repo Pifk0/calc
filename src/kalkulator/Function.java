@@ -9,13 +9,19 @@ package kalkulator;
  * @author 2NowakK
  */
 public class Function extends OperationAbs{
-    static public double Log(double x, double smiec){
+    static public double Log(Double x){
         return Math.log(x);
     }
-    static public double Sqrt(double x, double smiec){
+    static public double Sqrt(Double x){
         return Math.sqrt(x);
     }
-    static public double Abs(double x, double smiec){
+    static public double Abs(Double x){
         return Math.abs(x);
+    }
+    static public double Fact(Double x) {
+    	if (x < 1)
+    		return 1;
+    	else
+    		return x * Fact(x - 1);
     }
 }

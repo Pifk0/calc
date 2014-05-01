@@ -8,5 +8,9 @@ package kalkulator;
  *
  * @author 2NowakK
  */
-class DividedByZeroException extends ArithmeticException { }
+class DividedByZeroException extends ArithmeticException { 
+	DividedByZeroException(String msg) {
+		super(msg);
+	}
+}
 
