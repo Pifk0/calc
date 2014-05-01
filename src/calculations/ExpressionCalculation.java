@@ -54,6 +54,9 @@ public class ExpressionCalculation {
 		} catch (IndexOutOfBoundsException e) {
 			expressionValidation = false;
 		}
+		if(tmp.contains(". ")){
+			expressionValidation = false;
+		}
 		return tmp;
 		 
 	}
