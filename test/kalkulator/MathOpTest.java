@@ -41,7 +41,7 @@ public class MathOpTest extends TestCase {
             Double y = n[1][i];
             double expResult = n[2][i];
             double result = MathOp.Add(x, y);
-            assertEquals(expResult, result, 0.0);
+            assertEquals(expResult, result, 0.001);
         }
     }
 
@@ -58,7 +58,7 @@ public class MathOpTest extends TestCase {
             Double y = n[1][i];
             double expResult = n[2][i];
             double result = MathOp.Minus(x, y);
-            assertEquals(expResult, result, 0.0);
+            assertEquals(expResult, result, 0.001);
         }
     }
 
@@ -75,7 +75,7 @@ public class MathOpTest extends TestCase {
             Double y = n[1][i];
             double expResult = n[2][i];
             double result = MathOp.Multiply(x, y);
-            assertEquals(expResult, result, 0.0);
+            assertEquals(expResult, result, 0.001);
         }
     }
 
@@ -86,14 +86,14 @@ public class MathOpTest extends TestCase {
         System.out.println("Divide");
         Double [][] n = new Double[][]{{-3., -2.5, -1., 0., 1., 2., 3.4, 3.5,  1.1E100, -1.1E100}, 
                                        {-3., 2.5, 0., 0., 1., -2., 3., 3.7, 1.1E100, 1.1E100}, 
-                                       {1., -1., 0., 0., 1., -1., 1.13, 0.95, 1., -1.}};
+                                       {1., -1., 0., 0., 1., -1., 1.133333, 0.945945, 1., -1.}};
         for(int i = 0; i < 10; i++){
         try{
             Double x = n[0][i];
             Double y = n[1][i];
             double expResult = n[2][i];
             double result = MathOp.Divide(x, y);
-            assertEquals(expResult, result, 0.0);
+            assertEquals(expResult, result, 0.001);
         }
         catch(DividedByZeroException e){
             assertTrue(e instanceof DividedByZeroException);
@@ -106,16 +106,16 @@ public class MathOpTest extends TestCase {
      */
     public void testPower() {
         System.out.println("Power");
-        Double [][] n = new Double[][]{{-3., -2.5, -1., 0., 1., 2., 3.4, 3.5,  1.1E100, -1.1E100}, 
+        Double [][] n = new Double[][]{{-3., 2.5, -1., 0., 1., 2., 3.4, 3.5,  1.1E100, -1.1E100}, 
                                        {-3., 2.5, 0., 0., 1., -2., 3., 3.7, -1.1E100, -1.1E100}, 
-                                       {-0.04, -9.88, 1., 0., 1., 0.25, 39.30, 103.05, 0., 0.}};
+                                       {-0.0370370, 9.88212, 1., 0., 1., 0.25, 39.304, 103.05089, 0., 0.}};
         for(int i = 0; i < 10; i++){
         try{
             Double x = n[0][i];
             Double y = n[1][i];
             double expResult = n[2][i];
             double result = MathOp.Power(x, y);
-            assertEquals(expResult, result, 0.0);
+            assertEquals(expResult, result, 0.001);
         }
         catch(PoweredZeroByZeroException e){
             assertTrue(e instanceof PoweredZeroByZeroException);
